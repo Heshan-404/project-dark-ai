@@ -1,0 +1,168 @@
+/* Global Styles */
+:root {
+  --primary-dark-color: #007bff; /* Deep Blue */
+  --secondary-dark-color: #212529; /* Dark Gray */
+  --light-gray: #ddd;
+  --white: #fff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Varela Round', sans-serif;
+  background-color: var(--secondary-dark-color);
+  color: var(--white); /* White text color */
+}
+
+.ChatContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%; /* Make it take up full width by default */
+  background-color: var(--secondary-dark-color);
+  font-family: "Varela Round";
+  overflow-x: hidden;
+
+  /* Responsive styling for larger screens */
+  @media (min-width: 768px) {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
+.ChatHeader {
+  border-bottom: 1px solid grey;
+  color: white;
+  padding: 0px;
+  text-align: center;
+  font-size: 2em;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: "10px";
+  background-color: var(--primary-dark-color); /* Deep Blue background */
+}
+
+.ChatMessages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px; /* Added padding for better spacing */
+  color: var(--white);
+  animation: fadeIn 0.5s ease forwards;
+  display: flex;
+  flex-direction: column; /* Stack messages vertically */
+
+  /* Mobile Responsive Styling */
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
+}
+
+.ChatInputContainer {
+  display: flex;
+  align-items: center;
+  padding: 10px; /* Reduced padding for a cleaner look */
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+  background-color: var(--secondary-dark-color); /*  Dark Gray background */
+}
+
+.ChatInput {
+  flex: 1;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  background-color: var(--white); /* White input background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  color: var(--secondary-dark-color); /*  Dark Gray text color */
+}
+
+.SendButton {
+  padding: 15px;
+  width: 100px;
+  background-color: var(--primary-dark-color); /* Deep Blue background */
+  color: var(--white);
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 20px;
+  border: 2px solid var(--white); /* White border */
+
+  &:hover {
+    background-color: var(--white); /* White background on hover */
+    color: var(--primary-dark-color); /* Deep Blue text on hover */
+    border: 2px solid var(--primary-dark-color); /* Deep Blue border on hover */
+  }
+}
+
+.Loader {
+  border: 4px solid #f3f3f3; /* Light Gray border */
+  border-top: 4px solid #3498db; /* Blue border top */
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  animation: spin 2s linear infinite;
+}
+
+.AssistantMessageStyled {
+  background-color: var(--primary-dark-color); /* Deep Blue background */
+  border: 1px solid var(--white); /* White border */
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  text-align: left;
+  color: var(--white); /*  White text color */
+}
+
+.UserMessageStyled {
+  background-color: var(--secondary-dark-color); /* Dark Gray background */
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  text-align: right;
+  color: var(--white); /*  White text color */
+}
+
+.MessageContainer {
+  animation: fadeIn 0.5s ease;
+  background-color: var(--secondary-dark-color); /* Dark Gray background */
+}
+
+.CodeBlock {
+  position: relative;
+  border: 1px solid var(--light-gray); /* Light Gray border */
+  background-color: var(--secondary-dark-color); /* Dark Gray background */
+  margin: 14px;
+  color: var(--white);
+  border-radius: 10px;
+  font-family: monospace;
+  white-space: pre-wrap;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ChatHeader {
+  border-bottom: 1px solid grey;
+  color: var(--white);
+  padding: 0px;
+  text-align: center;
+  font-size: 2em;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: "10px";
+  background-color: var(--primary-dark-color); /* Deep Blue background */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

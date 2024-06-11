@@ -1,0 +1,150 @@
+.chatContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%; 
+    background-color: #181818;  /* Dark background color */
+    font-family: "Roboto", sans-serif; /* Using Roboto font */
+    overflow-x: hidden;
+    /* Responsive styling for larger screens */
+    @media (min-width: 768px) {
+      width: 70%;
+      margin: 0 auto;
+    }
+  }
+  
+  .chatHeader {
+    position:relative; /* Fixed at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Take full width */
+    border-bottom: 1px solid grey;
+    color: white; /* White text color */
+    padding: 0px;
+    text-align: center;
+    font-size: 2em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: "10px";
+    background-color: #2196F3;
+  }
+  
+  .chatMessages {
+    flex: 1;
+    overflow-y: auto; /* Make this part scrollable */
+    padding: 20px; /* Added padding for better spacing */
+    color: white; /* White text color */
+    animation: fadeIn 0.5s ease forwards;
+    display: flex;
+    flex-direction: column; /* Stack messages vertically */
+  
+    /* Mobile Responsive Styling */
+    @media (max-width: 768px) {
+      padding: 10px;
+    }
+  }
+  
+  .chatInputContainer {
+    position: re; /* Fixed at the bottom */
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Take full width */
+    display: flex;
+    align-items: center;
+    padding: 10px; /* Reduced padding for a cleaner look */
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: #181818; /* Match background color */
+  }
+  
+  .chatInput {
+    flex: 1;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    color: #181818;  /* Dark text color for input */
+  }
+  
+  .sendButton {
+    padding: 15px;
+    width: 100px;
+    background-color: black;
+    color: white; /* White text color */
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+    cursor: pointer;
+    border: 2px solid white;
+  
+    &:hover {
+      background-color: white; /* White background on hover */
+      color: black;
+      border: 2px solid black;
+    }
+  }
+  
+  .loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    animation: spin 2s linear infinite;
+  
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+  
+  .userMessage {
+    background-color: #2196F3; 
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    text-align: right;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for messages */
+    animation: glow 1.5s infinite alternate;  /* Animation for glow effect */
+  }
+  
+  .assistantMessage {
+    background-color: black; 
+    border: 1px solid white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for messages */
+    animation: glow 1.5s infinite alternate;  /* Animation for glow effect */
+  }
+  
+  .message {
+    animation: fadeIn 0.5s ease;
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
+  
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+  }
+  
+  
