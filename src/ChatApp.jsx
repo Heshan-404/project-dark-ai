@@ -16,6 +16,10 @@ import { Alert } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ChatHistory from "./ChatHistory";
 
+// Axios Retry Interceptor
+import axiosRetry from "axios-retry";
+axiosRetry(axios, { retries: 3, retryDelay: axiosRetry.exponentialDelay });
+
 const theme = {
   primaryBackground: "#001020",
   secondaryBackground: "#030818",
