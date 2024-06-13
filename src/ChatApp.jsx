@@ -100,13 +100,10 @@ const ChatApp = () => {
       scrollToBottom();
 
       try {
-        const response = await axios.post(
-          "https://project-dark-ai-backend.vercel.app/chat",
-          {
-            history: messages.concat(newMessage),
-            newMsg: userInput,
-          }
-        );
+        const response = await axios.post("http://localhost:3001/chat", {
+          history: messages.concat(newMessage),
+          newMsg: userInput,
+        });
         const data = response.data;
         if (
           data &&
